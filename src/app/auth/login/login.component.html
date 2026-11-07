@@ -1,0 +1,81 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100" style="background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);">
+  <div class="card shadow-sm border-0" style="width: 40rem; border-radius: 0.75rem; overflow: hidden;">
+    <div class="header-section text-center py-4 position-relative" style="background: linear-gradient(135deg, #4338CA 0%, #6366F1 100%);">
+      <div class="container" (click)="onLogoClick()">
+        <h1 class="fw-bold text-white mb-2">EduSpark</h1>
+        <p class="text-white-50 mb-0">Gamifikacja zmieniająca naukę w przygodę</p>
+      </div>
+    </div>
+    
+    <div class="px-4 py-3" style="background-color: #ffffff;">
+      <div class="alert alert-info d-flex align-items-center border-0 shadow-sm" role="alert" 
+           style="background: linear-gradient(135deg, #DBEAFE 0%, #EFF6FF 100%); color: #1E40AF;">
+        <i class="bi bi-info-circle-fill me-2"></i>
+        <span>
+          Wprowadź swoje dane, aby uzyskać dostęp do swojego konta.
+        </span>
+      </div>
+    </div>
+
+    <div class="card-body p-4">
+      <!-- Error -->
+      <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible fade show shadow-sm border-0" role="alert"
+           style="background: linear-gradient(135deg, #FEE2E2 0%, #FEF2F2 100%); color: #991B1B;">
+        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+        {{errorMessage}}
+        <button type="button" class="btn-close" (click)="errorMessage = ''" aria-label="Close"></button>
+      </div>
+
+      <!-- Success -->
+      <div *ngIf="successMessage" class="alert alert-success alert-dismissible fade show shadow-sm border-0" role="alert"
+           style="background: linear-gradient(135deg, #DCFCE7 0%, #F0FDF4 100%); color: #166534;">
+        <i class="bi bi-check-circle-fill me-2"></i>
+        {{successMessage}}
+        <button type="button" class="btn-close" (click)="successMessage = ''" aria-label="Close"></button>
+      </div>
+
+      <form (submit)="loginUser(); $event.preventDefault();" class="mt-3">
+        <div class="mb-4">
+          <label for="email" class="form-label small fw-medium text-secondary">Adres email</label>
+          <input id="email" type="email" class="form-control shadow-sm" 
+                 [(ngModel)]="email" name="email" required [class.is-invalid]="errorMessage && !email"
+                 style="border-radius: 0.5rem; border-color: #E0E7FF; padding: 0.75rem;"/>
+        </div>
+        <div class="mb-4">
+          <label for="password" class="form-label small fw-medium text-secondary">Hasło</label>
+          <input id="password" type="password" class="form-control shadow-sm" 
+                 [(ngModel)]="password" name="password" required [class.is-invalid]="errorMessage && !password"
+                 style="border-radius: 0.5rem; border-color: #E0E7FF; padding: 0.75rem;"/>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div class="form-check">
+            <input type="checkbox" id="rememberMe" class="form-check-input shadow-sm" 
+                   [(ngModel)]="rememberMe" name="rememberMe"
+                   style="border-color: #E0E7FF;">
+            <label for="rememberMe" class="form-check-label small text-secondary">Zapamiętaj mnie</label>
+          </div>
+          <a href="/forgot-password" class="text-decoration-none small fw-medium" style="color: #4338CA;">Zapomniałeś hasła?</a>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 mb-3 py-3" 
+                style="background: linear-gradient(135deg, #4338CA 0%, #6366F1 100%); border: none; border-radius: 0.5rem;"
+                [disabled]="isLoading">
+          <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+          {{isLoading ? 'Logowanie...' : 'Zaloguj się'}}
+        </button>
+
+        <div class="text-center">
+          <p class="mb-0 small text-secondary">
+            Nie masz jeszcze konta? 
+            <a routerLink="/register" class="text-decoration-none fw-medium" style="color: #4338CA;">Zarejestruj się</a>
+          </p>
+          <div *ngIf="showTeacherLink" class="mt-3">
+            <a routerLink="/teacher/login" class="text-decoration-none small fw-medium d-block mb-2" style="color: #4338CA;">
+              Logowanie dla nauczycieli
+            </a>
+           
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

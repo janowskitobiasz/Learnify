@@ -1,0 +1,15 @@
+.bg-primary {
+  background-color: #2563eb;  
+}
+
+.hover\:bg-primary-dark:hover {
+  background-color: #1d4ed8;  
+}
+
+button {
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: translateY(-1px);
+} 

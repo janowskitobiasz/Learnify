@@ -1,0 +1,32 @@
+.stat-card {
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .stat-card:hover {
+    transform: scale(1.1);
+    background-color: #f0f0f0;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+  }
+  
+  .card-text {
+    font-size: 0.95rem;
+  }
+  
+  .call-to-action {
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    color: white;
+  }
+  
+  .call-to-action .btn {
+    background-color: white;
+    color: #007bff;
+  }
+  
+  .call-to-action .btn:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  

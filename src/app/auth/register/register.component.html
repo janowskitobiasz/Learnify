@@ -1,0 +1,62 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100" style="background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);">
+  <div class="card shadow-sm border-0" style="width: 40rem; border-radius: 0.75rem; overflow: hidden;">
+    <div class="header-section text-center py-4 position-relative" style="background: linear-gradient(135deg, #4338CA 0%, #6366F1 100%);">
+      <div class="container">
+        <h1 class="fw-bold text-white mb-2">EduSpark</h1>
+        <p class="text-white-50 mb-0">Gamifikacja zmieniająca naukę w przygodę</p>
+      </div>
+    </div>
+    
+    <div class="px-4 py-3" style="background-color: #ffffff;">
+      <div class="alert alert-info d-flex align-items-center border-0 shadow-sm" role="alert" 
+           style="background: linear-gradient(135deg, #DBEAFE 0%, #EFF6FF 100%); color: #1E40AF;">
+        <i class="bi bi-info-circle-fill me-2"></i>
+        <span>
+          Twój pseudonim zostanie utworzony automatycznie na podstawie imienia i numeru z dziennika (np. <b>Tomek_5</b>).
+        </span>
+      </div>
+    </div>
+
+    <div class="card-body p-4">
+      <form (submit)="registerUser(); $event.preventDefault();" class="mt-3">
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label for="first_name" class="form-label small fw-medium text-secondary">Imię</label>
+            <input id="first_name" type="text" class="form-control shadow-sm" 
+                   [(ngModel)]="first_name" name="first_name" required 
+                   style="border-radius: 0.5rem; border-color: #E0E7FF; padding: 0.75rem;"/>
+          </div>
+          <div class="col-md-6">
+            <label for="last_name" class="form-label small fw-medium text-secondary">Nazwisko</label>
+            <input id="last_name" type="text" class="form-control shadow-sm" 
+                   [(ngModel)]="last_name" name="last_name" required 
+                   style="border-radius: 0.5rem; border-color: #E0E7FF; padding: 0.75rem;"/>
+          </div>
+        </div>
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label for="email" class="form-label small fw-medium text-secondary">Adres email</label>
+            <input id="email" type="email" class="form-control shadow-sm" 
+                   [(ngModel)]="email" name="email" required 
+                   style="border-radius: 0.5rem; border-color: #E0E7FF; padding: 0.75rem;"/>
+          </div>
+        </div>
+        <div class="mb-4">
+          <label for="password" class="form-label small fw-medium text-secondary">Hasło</label>
+          <input id="password" type="password" class="form-control shadow-sm" 
+                 [(ngModel)]="password" name="password" required 
+                 style="border-radius: 0.5rem; border-color: #E0E7FF; padding: 0.75rem;"/>
+        </div>
+        <button type="submit" class="btn btn-primary w-100" [disabled]="isLoading">
+          <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+          {{isLoading ? 'Rejestracja...' : 'Zarejestruj się'}}
+        </button>
+      </form>
+    </div>
+
+    <div class="text-center py-4" style="background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);">
+      <p class="mb-0 small">Masz już konto? <a routerLink="/login" style="color: #4338CA; font-weight: 600;">Zaloguj się</a></p>
+    </div>
+  </div>
+</div>
+

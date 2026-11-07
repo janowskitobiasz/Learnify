@@ -1,0 +1,59 @@
+<div class="container-fluid min-vh-100 d-flex flex-column" style="background-color: #f9f9fb;">
+  <header class="bg-primary text-white py-5 shadow-sm">
+    <div class="container text-center position-relative">
+      <button (click)="logout()" class="btn btn-outline-light position-absolute" style="right: 1rem; top: 1rem;">
+        <i class="fas fa-sign-out-alt me-2"></i>Wyloguj się
+      </button>
+      <h1 class="fw-bold" style="font-size: 2.5rem; font-family: 'Comic Neue', cursive;">
+        Ustawienia profilu, <span class="text-warning">{{ firstName }}!</span>
+      </h1>
+      <p class="text-white-50" style="font-size: 1.2rem; font-family: 'Comic Neue', cursive;">
+        Zarządzaj swoim kontem i preferencjami
+      </p>
+    </div>
+  </header>
+
+  <main class="flex-grow-1 py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h2 class="card-title mb-4">Twoje dane</h2>
+              <form>
+                <div class="mb-3">
+                  <label for="firstName" class="form-label">Imię</label>
+                  <input type="text" class="form-control" id="firstName" [value]="firstName" disabled>
+                </div>
+                <div class="mb-3">
+                  <label for="lastName" class="form-label">Nazwisko</label>
+                  <input type="text" class="form-control" id="lastName" [value]="lastName" disabled>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" [value]="email" disabled>
+                </div>
+                <div class="mb-3">
+                  <label for="role" class="form-label">Rola</label>
+                  <input type="text" class="form-control" id="role" [value]="role" disabled>
+                </div>
+                <div class="d-grid gap-2">
+                  <button type="button" class="btn btn-primary">
+                    <i class="fas fa-key me-2"></i>Zmień hasło
+                  </button>
+                  <button type="button" class="btn btn-danger" (click)="logout()">
+                    <i class="fas fa-sign-out-alt me-2"></i>Wyloguj się
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-primary text-white py-3 text-center">
+    <p class="mb-0">EduSpark — Twoja droga do sukcesu. © 2025</p>
+  </footer>
+</div>

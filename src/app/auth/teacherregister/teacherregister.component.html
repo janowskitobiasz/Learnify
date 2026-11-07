@@ -1,0 +1,76 @@
+<div class="container-fluid min-vh-100 d-flex flex-column" style="background-color: #f9f9fb;">
+  <div class="row justify-content-center align-items-center flex-grow-1">
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-sm border-0" style="border-radius: 15px;">
+        <div class="card-body p-4">
+          <div class="text-center mb-4">
+            <h2 class="fw-bold">Rejestracja Nauczyciela</h2>
+            <p class="text-muted">Dołącz do naszej społeczności edukacyjnej</p>
+          </div>
+
+          <!-- Error Alert -->
+          <div *ngIf="error" class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ error }}
+            <button type="button" class="btn-close" (click)="error = null" aria-label="Close"></button>
+          </div>
+
+          <form (ngSubmit)="onSubmit()" #teacherForm="ngForm">
+            <div class="mb-3">
+              <label for="firstName" class="form-label">Imię</label>
+              <input type="text" class="form-control" id="firstName" name="firstName"
+                     [(ngModel)]="registrationData.first_name" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="lastName" class="form-label">Nazwisko</label>
+              <input type="text" class="form-control" id="lastName" name="lastName"
+                     [(ngModel)]="registrationData.last_name" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email"
+                     [(ngModel)]="registrationData.email" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Hasło</label>
+              <input type="password" class="form-control" id="password" name="password"
+                     [(ngModel)]="registrationData.password" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="schoolName" class="form-label">Nazwa Szkoły</label>
+              <input type="text" class="form-control" id="schoolName" name="schoolName"
+                     [(ngModel)]="registrationData.school_name" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="subject" class="form-label">Nauczany Przedmiot</label>
+              <select class="form-select" id="subject" name="subject"
+                      [(ngModel)]="registrationData.subject_taught" required>
+                <option value="">Wybierz przedmiot</option>
+                <option value="Język angielski">Język angielski</option>
+                <option value="Matematyka">Matematyka</option>
+                <option value="Fizyka">Fizyka</option>
+                <option value="Chemia">Chemia</option>
+                <option value="Geografia">Geografia</option>
+                <option value="Historia">Historia</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 py-2 fw-bold" [disabled]="isLoading || !teacherForm.form.valid">
+              <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+              {{isLoading ? 'Rejestracja...' : 'Zarejestruj się'}}
+            </button>
+          </form>
+        </div>
+
+        <div class="bg-light text-center py-3 border-top">
+          <p class="mb-0">Masz już konto? <a routerLink="/teacher-login" class="text-primary fw-bold">Zaloguj się</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  

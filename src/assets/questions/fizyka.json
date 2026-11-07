@@ -1,0 +1,98 @@
+{
+  "easy": [
+    {
+      "question": "Jaka jest podstawowa jednostka siły w układzie SI?",
+      "correct_answer": "Newton (N)",
+      "incorrect_answers": ["Kilogram (kg)", "Wat (W)", "Dżul (J)"],
+      "difficulty": "easy"
+    },
+    {
+      "question": "Co to jest grawitacja?",
+      "correct_answer": "Siła przyciągania między masami",
+      "incorrect_answers": ["Siła odpychania", "Rodzaj promieniowania", "Ruch planet"],
+      "difficulty": "easy"
+    },
+    {
+      "question": "Jaką prędkość ma światło w próżni?",
+      "correct_answer": "300 000 km/s",
+      "incorrect_answers": ["200 000 km/s", "400 000 km/s", "500 000 km/s"],
+      "difficulty": "easy"
+    },
+    {
+      "question": "Co mierzy termometr?",
+      "correct_answer": "Temperaturę",
+      "incorrect_answers": ["Ciśnienie", "Wilgotność", "Prędkość"],
+      "difficulty": "easy"
+    },
+    {
+      "question": "Która jednostka opisuje natężenie prądu elektrycznego?",
+      "correct_answer": "Amper",
+      "incorrect_answers": ["Wolt", "Om", "Wat"],
+      "difficulty": "easy"
+    }
+  ],
+  "medium": [
+    {
+      "question": "Jakie jest przyspieszenie ziemskie na powierzchni Ziemi?",
+      "correct_answer": "9.81 m/s²",
+      "incorrect_answers": ["8.91 m/s²", "10.1 m/s²", "7.81 m/s²"],
+      "difficulty": "medium"
+    },
+    {
+      "question": "Co to jest częstotliwość drgań?",
+      "correct_answer": "Liczba drgań w jednostce czasu",
+      "incorrect_answers": ["Długość fali", "Amplituda drgań", "Okres drgań"],
+      "difficulty": "medium"
+    },
+    {
+      "question": "Jaka jest jednostka mocy w układzie SI?",
+      "correct_answer": "Wat",
+      "incorrect_answers": ["Dżul", "Newton", "Kilowat"],
+      "difficulty": "medium"
+    },
+    {
+      "question": "Co to jest przewodnik elektryczny?",
+      "correct_answer": "Materiał, który dobrze przewodzi prąd elektryczny",
+      "incorrect_answers": ["Materiał izolujący", "Źródło prądu", "Rodzaj baterii"],
+      "difficulty": "medium"
+    },
+    {
+      "question": "Jakie jest prawo Ohma?",
+      "correct_answer": "I = U/R",
+      "incorrect_answers": ["U = I*R²", "R = U*I", "P = U*I"],
+      "difficulty": "medium"
+    }
+  ],
+  "hard": [
+    {
+      "question": "Co to jest zasada zachowania pędu?",
+      "correct_answer": "Całkowity pęd układu izolowanego pozostaje stały",
+      "incorrect_answers": ["Energia nie może być zniszczona", "Siła równa się masie razy przyspieszenie", "Ciała przyciągają się z siłą proporcjonalną do ich mas"],
+      "difficulty": "hard"
+    },
+    {
+      "question": "Co to jest efekt fotoelektryczny?",
+      "correct_answer": "Emisja elektronów pod wpływem promieniowania elektromagnetycznego",
+      "incorrect_answers": ["Odbicie światła od powierzchni", "Załamanie światła w pryzmacie", "Interferencja fal świetlnych"],
+      "difficulty": "hard"
+    },
+    {
+      "question": "Jakie jest równanie Einsteina dotyczące równoważności masy i energii?",
+      "correct_answer": "E = mc²",
+      "incorrect_answers": ["E = mv²/2", "F = ma", "P = VI"],
+      "difficulty": "hard"
+    },
+    {
+      "question": "Co to jest zasada nieoznaczoności Heisenberga?",
+      "correct_answer": "Nie można jednocześnie dokładnie zmierzyć położenia i pędu cząstki",
+      "incorrect_answers": ["Energia jest zawsze zachowana", "Masa jest zawsze stała", "Prędkość światła jest stała"],
+      "difficulty": "hard"
+    },
+    {
+      "question": "Co to jest transformacja Lorentza?",
+      "correct_answer": "Przekształcenie współrzędnych między układami inercjalnymi",
+      "incorrect_answers": ["Zmiana energii w masę", "Przejście fazowe materii", "Rozpad jądrowy"],
+      "difficulty": "hard"
+    }
+  ]
+} 

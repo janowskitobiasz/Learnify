@@ -1,0 +1,98 @@
+{
+  "easy": [
+    {
+      "question": "Jaka jest stolica Polski?",
+      "correct_answer": "Warszawa",
+      "incorrect_answers": ["Kraków", "Poznań", "Wrocław"],
+      "difficulty": "easy"
+    },
+    {
+      "question": "Który ocean jest największy?",
+      "correct_answer": "Ocean Spokojny",
+      "incorrect_answers": ["Ocean Atlantycki", "Ocean Indyjski", "Ocean Arktyczny"],
+      "difficulty": "easy"
+    },
+    {
+      "question": "Jaki jest najwyższy szczyt świata?",
+      "correct_answer": "Mount Everest",
+      "incorrect_answers": ["K2", "Mont Blanc", "Kilimandżaro"],
+      "difficulty": "easy"
+    },
+    {
+      "question": "Na jakim kontynencie leży Polska?",
+      "correct_answer": "Europa",
+      "incorrect_answers": ["Azja", "Ameryka Północna", "Afryka"],
+      "difficulty": "easy"
+    },
+    {
+      "question": "Jaka jest najdłuższa rzeka świata?",
+      "correct_answer": "Nil",
+      "incorrect_answers": ["Amazonka", "Missisipi", "Jangcy"],
+      "difficulty": "easy"
+    }
+  ],
+  "medium": [
+    {
+      "question": "Które państwo ma największą powierzchnię?",
+      "correct_answer": "Rosja",
+      "incorrect_answers": ["Chiny", "USA", "Kanada"],
+      "difficulty": "medium"
+    },
+    {
+      "question": "Co to jest tektonika płyt?",
+      "correct_answer": "Teoria ruchu płyt litosfery",
+      "incorrect_answers": ["Rodzaj skały", "Typ klimatu", "Forma ukształtowania terenu"],
+      "difficulty": "medium"
+    },
+    {
+      "question": "Jaka jest najgłębsza część oceanu?",
+      "correct_answer": "Rów Mariański",
+      "incorrect_answers": ["Rów Filipiński", "Rów Atacama", "Rów Sundajski"],
+      "difficulty": "medium"
+    },
+    {
+      "question": "Co to jest monsun?",
+      "correct_answer": "Sezonowy wiatr",
+      "incorrect_answers": ["Typ gleby", "Rodzaj skały", "Forma rzeźby terenu"],
+      "difficulty": "medium"
+    },
+    {
+      "question": "Które miasto jest największe pod względem liczby ludności?",
+      "correct_answer": "Tokio",
+      "incorrect_answers": ["Nowy Jork", "Szanghaj", "Delhi"],
+      "difficulty": "medium"
+    }
+  ],
+  "hard": [
+    {
+      "question": "Co to jest efekt koriolisa?",
+      "correct_answer": "Odchylenie ciał w ruchu spowodowane rotacją Ziemi",
+      "incorrect_answers": ["Zmiana klimatu", "Ruch płyt tektonicznych", "Cyrkulacja oceaniczna"],
+      "difficulty": "hard"
+    },
+    {
+      "question": "Co to jest antycyklon?",
+      "correct_answer": "Obszar wysokiego ciśnienia atmosferycznego",
+      "incorrect_answers": ["Rodzaj wiatru", "Typ opadów", "Forma ukształtowania terenu"],
+      "difficulty": "hard"
+    },
+    {
+      "question": "Co to jest strefa subdukcji?",
+      "correct_answer": "Miejsce gdzie jedna płyta tektoniczna wsuwa się pod drugą",
+      "incorrect_answers": ["Obszar występowania wulkanów", "Strefa klimatyczna", "Region sejsmiczny"],
+      "difficulty": "hard"
+    },
+    {
+      "question": "Co to jest ablacja?",
+      "correct_answer": "Proces topnienia i parowania lodu lodowcowego",
+      "incorrect_answers": ["Rodzaj wietrzenia", "Typ erozji", "Forma akumulacji"],
+      "difficulty": "hard"
+    },
+    {
+      "question": "Co to jest delta?",
+      "correct_answer": "Forma akumulacyjna u ujścia rzeki",
+      "incorrect_answers": ["Typ wybrzeża", "Rodzaj skały", "Forma erozyjna"],
+      "difficulty": "hard"
+    }
+  ]
+} 

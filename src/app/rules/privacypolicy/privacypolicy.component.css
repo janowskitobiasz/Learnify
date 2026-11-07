@@ -1,0 +1,47 @@
+.container {
+    max-width: 800px;
+  }
+  
+  .card {
+    background-color: #f8f9fa; /* Jasne tło dla czytelności */
+    border-radius: 8px;
+  }
+  
+  h1, h3 {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  p {
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .text-muted {
+    font-size: 0.85rem;
+    color: #888;
+  }
+  
+  ul {
+    padding-left: 20px;
+  }
+  .btn-outline-primary {
+    border: 2px solid #007bff;
+    color: #007bff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  

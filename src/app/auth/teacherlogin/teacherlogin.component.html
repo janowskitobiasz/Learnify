@@ -1,0 +1,63 @@
+<div class="container-fluid min-vh-100 d-flex flex-column" style="background-color: #f9f9fb;">
+  <div class="row justify-content-center align-items-center flex-grow-1">
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-sm border-0" style="border-radius: 15px;">
+        <div class="header-section text-center py-4" style="background: linear-gradient(135deg, #4338CA 0%, #6366F1 100%); border-top-left-radius: 15px; border-top-right-radius: 15px;">
+          <h2 class="fw-bold text-white mb-2">Logowanie Nauczyciela</h2>
+          <p class="text-white-50 mb-0">Zaloguj się do swojego konta nauczyciela</p>
+        </div>
+
+        <div class="card-body p-4">
+          <!-- Error Alert -->
+          <div *ngIf="error" class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+            {{ error }}
+            <button type="button" class="btn-close" (click)="error = null" aria-label="Close"></button>
+          </div>
+
+          <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email"
+                     [(ngModel)]="loginData.email" required
+                     [class.is-invalid]="error && !loginData.email">
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Hasło</label>
+              <input type="password" class="form-control" id="password" name="password"
+                     [(ngModel)]="loginData.password" required
+                     [class.is-invalid]="error && !loginData.password">
+            </div>
+
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe"
+                     [(ngModel)]="loginData.rememberMe">
+              <label class="form-check-label" for="rememberMe">Zapamiętaj mnie</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 mb-3" 
+                    style="background: linear-gradient(135deg, #4338CA 0%, #6366F1 100%); border: none;"
+                    [disabled]="isLoading || !loginForm.form.valid">
+              <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+              {{isLoading ? 'Logowanie...' : 'Zaloguj się'}}
+            </button>
+
+            <div class="text-center">
+              <a routerLink="/teacher/register" class="text-decoration-none small fw-medium" style="color: #4338CA;">
+                Nie masz konta? Zarejestruj się
+              </a>
+            </div>
+          </form>
+        </div>
+
+        <div class="card-footer bg-light text-center py-3" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+          <a routerLink="/login" class="text-decoration-none small fw-medium" style="color: #4338CA;">
+            Powrót do logowania ucznia
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  

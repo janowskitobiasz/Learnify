@@ -1,1 +1,356 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Global styles for EduSpark */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Primary Colors - Soft Indigo */
+  --primary-color: #6366F1;      /* Modern indigo - main brand color */
+  --primary-dark: #4F46E5;       /* Darker indigo for hover states */
+  --primary-light: #818CF8;      /* Light indigo for backgrounds */
+  
+  /* Secondary Colors - Coral */
+  --secondary-color: #F87171;    /* Soft coral - for accents and important actions */
+  --secondary-dark: #EF4444;     /* Darker coral for hover states */
+  --secondary-light: #FCA5A5;    /* Light coral for highlights */
+  
+  /* Success Colors - Emerald */
+  --success-color: #34D399;      /* Emerald green for success states */
+  --success-light: #6EE7B7;      /* Light emerald for backgrounds */
+  
+  /* Warning Colors - Amber */
+  --warning-color: #FBBF24;      /* Warm amber for warnings */
+  --warning-light: #FCD34D;      /* Light amber for backgrounds */
+  
+  /* Error Colors - Rose */
+  --error-color: #FB7185;        /* Soft rose for errors */
+  --error-light: #FDA4AF;        /* Light rose for backgrounds */
+  
+  /* Neutral Colors */
+  --background-primary: #FFFFFF;  /* Pure white background */
+  --background-secondary: #F8FAFC; /* Cool gray background */
+  --text-primary: #1E293B;       /* Slate blue for main text */
+  --text-secondary: #64748B;     /* Cool gray for secondary text */
+  --border-color: #E2E8F0;       /* Cool gray for borders */
+
+  /* Additional UI Colors */
+  --surface-1: #FFFFFF;          /* Card backgrounds */
+  --surface-2: #F1F5F9;          /* Secondary surfaces */
+  --surface-3: #E2E8F0;          /* Tertiary surfaces */
+  --shadow-color: rgba(51, 65, 85, 0.1); /* Soft shadows */
+}
+
+/* Global styles */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+/* Button styles */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.button-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.button-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.button-secondary:hover {
+  background-color: var(--secondary-dark);
+}
+
+/* Card styles */
+.card {
+  background: var(--surface-1);
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px var(--shadow-color);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+  background-color: var(--background-primary);
+}
+
+/* Badge styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.badge-success {
+  background-color: var(--success-light);
+  color: var(--success-color);
+}
+
+.badge-warning {
+  background-color: var(--warning-light);
+  color: var(--warning-color);
+}
+
+.badge-error {
+  background-color: var(--error-light);
+  color: var(--error-color);
+}
+
+/* Quiz specific styles */
+.quiz-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--surface-1);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.quiz-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.quiz-content {
+  margin-top: 2rem;
+}
+
+.question {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.answers {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Progress bar */
+.progress-bar {
+  width: 100%;
+  height: 0.5rem;
+  background-color: var(--surface-2);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+/* Navigation */
+nav {
+  background-color: var(--surface-1);
+  padding: 1rem;
+  box-shadow: 0 1px 3px var(--shadow-color);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+header {
+  background-color: var(--surface-1);
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Additional UI Enhancements */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.rounded {
+  border-radius: 0.375rem;
+}
+
+.shadow {
+  box-shadow: 0 1px 3px var(--shadow-color);
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--surface-1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+th {
+  background-color: var(--surface-2);
+  font-weight: 600;
+}
+
+/* Footer styles */
+footer {
+  background-color: var(--surface-1);
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
+/* Text colors */
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-success {
+  color: var(--success-color);
+}
+
+.text-warning {
+  color: var(--warning-color);
+}
+
+.text-error {
+  color: var(--error-color);
+}
+
+/* Background colors */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color);
+}
+
+.bg-success {
+  background-color: var(--success-color);
+}
+
+.bg-warning {
+  background-color: var(--warning-color);
+}
+
+.bg-error {
+  background-color: var(--error-color);
+}
+
+.bg-surface-1 {
+  background-color: var(--surface-1);
+}
+
+.bg-surface-2 {
+  background-color: var(--surface-2);
+}
+
+.bg-surface-3 {
+  background-color: var(--surface-3);
+}

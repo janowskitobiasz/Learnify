@@ -1,0 +1,232 @@
+<div class="container-fluid min-vh-100 d-flex flex-column" style="background-color: #f9f9fb;">
+  <header class="bg-primary text-white py-5 shadow-sm">
+    <div class="container text-center position-relative">
+      <button (click)="logout()" class="btn btn-outline-light position-absolute" style="right: 1rem; top: 1rem;">
+        <i class="fas fa-sign-out-alt me-2"></i>Wyloguj się
+      </button>
+      <h1 class="fw-bold" style="font-size: 2.5rem; font-family: 'Comic Neue', cursive;">
+        Panel Nauczyciela, <span class="text-warning">{{ firstName }}!</span>
+      </h1>
+      <p class="text-white-50" style="font-size: 1.2rem; font-family: 'Comic Neue', cursive;">
+        Zarządzaj klasami i monitoruj postępy uczniów
+      </p>
+    </div>
+  </header>
+
+  <main class="flex-grow-1 py-5">
+    <div class="container">
+      <!-- Error Alert -->
+      <div *ngIf="error" class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
+        {{ error }}
+        <button type="button" class="btn-close" (click)="error = null" aria-label="Close"></button>
+      </div>
+
+      <!-- Create New Class -->
+      <div class="card shadow-sm border-0 mb-4" style="border-radius: 15px;">
+        <div class="card-body">
+          <h3 class="card-title mb-4">Utwórz Nową Klasę</h3>
+          <form (ngSubmit)="createClass()" #classForm="ngForm" class="row g-3">
+            <div class="col-md-5">
+              <label for="className" class="form-label">Nazwa Klasy</label>
+              <input type="text" class="form-control" id="className" name="className"
+                     [(ngModel)]="newClass.class_name" required>
+            </div>
+            <div class="col-md-5">
+              <label for="subject" class="form-label">Przedmiot</label>
+              <select class="form-select" id="subject" name="subject"
+                      [(ngModel)]="newClass.subject" required>
+                <option value="">Wybierz przedmiot</option>
+                <option value="Język angielski">Język angielski</option>
+                <option value="Matematyka">Matematyka</option>
+                <option value="Fizyka">Fizyka</option>
+                <option value="Chemia">Chemia</option>
+                <option value="Geografia">Geografia</option>
+                <option value="Historia">Historia</option>
+              </select>
+            </div>
+            <div class="col-md-2 d-flex align-items-end">
+              <button type="submit" class="btn btn-primary w-100" [disabled]="!classForm.form.valid || isLoading">
+                <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2"></span>
+                Utwórz Klasę
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Class List -->
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card shadow-sm border-0" style="border-radius: 15px;">
+            <div class="card-body">
+              <h3 class="card-title mb-4">Twoje Klasy</h3>
+              <div class="list-group">
+                <button *ngFor="let class of classes"
+                        class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                        [class.active]="selectedClass?.id === class.id"
+                        (click)="selectClass(class.id!)">
+                  {{ class.class_name }}
+                  <span class="badge bg-primary rounded-pill">{{ class.subject }}</span>
+                </button>
+              </div>
+              <div *ngIf="classes.length === 0" class="text-center text-muted py-3">
+                Nie masz jeszcze żadnych klas
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Class Details -->
+        <div class="col-md-8" *ngIf="selectedClass">
+          <div class="card shadow-sm border-0" style="border-radius: 15px;">
+            <div class="card-body">
+              <h3 class="card-title mb-4">{{ selectedClass.class_name }} - {{ selectedClass.subject }}</h3>
+
+              <!-- Invite Students -->
+              <div class="mb-4">
+                <h4>Zaproś Uczniów</h4>
+                <form (ngSubmit)="inviteStudent()" #inviteForm="ngForm" class="row g-3">
+                  <div class="col-md-8">
+                    <input type="email" class="form-control" placeholder="Email ucznia"
+                           [(ngModel)]="newInvite.student_email" name="studentEmail" required>
+                  </div>
+                  <div class="col-md-4">
+                    <button type="submit" class="btn btn-primary w-100" [disabled]="!inviteForm.form.valid">
+                      Zaproś
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Student List -->
+              <div class="mt-4">
+                <h4>Lista uczniów</h4>
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Wyniki</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngIf="students.length === 0">
+                        <td colspan="3" class="text-center text-muted py-3">
+                          Brak uczniów w tej klasie
+                        </td>
+                      </tr>
+                      <tr *ngFor="let student of students">
+                        <td>{{ student.student_email }}</td>
+                        <td>
+                          <span [class]="getStatusBadgeClass(student.status)">
+                            {{ getStatusLabel(student.status) }}
+                          </span>
+                        </td>
+                        <td>
+                          <div *ngIf="student.status === 'accepted'">
+                            <div *ngIf="student.scores && student.scores.length > 0">
+                              <button class="btn btn-sm btn-outline-primary" 
+                                      (click)="student.showScores = !student.showScores">
+                                {{ student.showScores ? 'Ukryj wyniki' : 'Pokaż wyniki' }}
+                              </button>
+                              
+                              <div *ngIf="student.showScores" class="mt-2">
+                                <table class="table table-sm">
+                                  <thead>
+                                    <tr>
+                                      <th>Przedmiot</th>
+                                      <th>Wynik</th>
+                                      <th>Poziom</th>
+                                      <th>Data</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr *ngFor="let score of student.scores">
+                                      <td>{{ score.subject }}</td>
+                                      <td>
+                                        {{ score.score }}/{{ score.total_questions }}
+                                        ({{ (score.score / score.total_questions * 100) | number:'1.0-0' }}%)
+                                      </td>
+                                      <td>
+                                        <span [class]="getDifficultyBadgeClass(score.difficulty)">
+                                          {{ getDifficultyLabel(score.difficulty) }}
+                                        </span>
+                                      </td>
+                                      <td>{{ score.created_at | date:'dd.MM.yyyy HH:mm' }}</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            <span *ngIf="!student.scores || student.scores.length === 0" 
+                                  class="text-muted">
+                              Brak wyników
+                            </span>
+                          </div>
+                          <span *ngIf="student.status !== 'accepted'" class="text-muted">
+                            -
+                          </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- View Scores Button -->
+              <button class="btn btn-outline-primary mt-4" (click)="viewClassScores(selectedClass!)">
+                <i class="fas fa-chart-bar me-2"></i>Zobacz Wyniki Klasy
+              </button>
+
+              <!-- Scores Display -->
+              <div *ngIf="showScores" class="mt-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h4>Wyniki Uczniów</h4>
+                  <button class="btn btn-sm btn-outline-secondary" (click)="hideScores()">
+                    <i class="fas fa-times me-2"></i>Zamknij
+                  </button>
+                </div>
+                
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Uczeń</th>
+                        <th>Przedmiot</th>
+                        <th>Poziom</th>
+                        <th>Wynik</th>
+                        <th>Data</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let score of classScores">
+                        <td>{{ score.user_first_name }} {{ score.user_last_name }}</td>
+                        <td>{{ score.subject }}</td>
+                        <td>
+                          <span [class]="getDifficultyBadgeClass(score.difficulty)">
+                            {{ getDifficultyLabel(score.difficulty) }}
+                          </span>
+                        </td>
+                        <td>
+                          {{ score.score }}/{{ score.total_questions }}
+                          <small class="text-muted">({{ getScorePercentage(score.score, score.total_questions) | number:'1.0-0' }}%)</small>
+                        </td>
+                        <td>{{ score.created_at | date:'dd.MM.yyyy HH:mm' }}</td>
+                      </tr>
+                      <tr *ngIf="classScores.length === 0">
+                        <td colspan="5" class="text-center text-muted py-3">
+                          Brak wyników do wyświetlenia
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

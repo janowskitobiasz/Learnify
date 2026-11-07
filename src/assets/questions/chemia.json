@@ -1,0 +1,98 @@
+{
+  "easy": [
+    {
+      "question": "Jaki jest symbol chemiczny złota?",
+      "correct_answer": "Au",
+      "incorrect_answers": ["Ag", "Fe", "Cu"],
+      "difficulty": "easy"
+    },
+    {
+      "question": "Co to jest atom?",
+      "correct_answer": "Najmniejsza część pierwiastka chemicznego",
+      "incorrect_answers": ["Cząsteczka wody", "Związek chemiczny", "Mieszanina substancji"],
+      "difficulty": "easy"
+    },
+    {
+      "question": "Jaki gaz jest najczęstszym składnikiem powietrza?",
+      "correct_answer": "Azot",
+      "incorrect_answers": ["Tlen", "Wodór", "Dwutlenek węgla"],
+      "difficulty": "easy"
+    },
+    {
+      "question": "Jaką wartość ma pH czystej wody?",
+      "correct_answer": "7",
+      "incorrect_answers": ["0", "14", "10"],
+      "difficulty": "easy"
+    },
+    {
+      "question": "Co to jest H2O?",
+      "correct_answer": "Woda",
+      "incorrect_answers": ["Kwas solny", "Sól kuchenna", "Tlen"],
+      "difficulty": "easy"
+    }
+  ],
+  "medium": [
+    {
+      "question": "Co to jest reakcja egzotermiczna?",
+      "correct_answer": "Reakcja wydzielająca ciepło",
+      "incorrect_answers": ["Reakcja pochłaniająca ciepło", "Reakcja bez efektu cieplnego", "Reakcja rozkładu"],
+      "difficulty": "medium"
+    },
+    {
+      "question": "Jaki jest wzór chemiczny kwasu siarkowego?",
+      "correct_answer": "H2SO4",
+      "incorrect_answers": ["HCl", "NaOH", "CO2"],
+      "difficulty": "medium"
+    },
+    {
+      "question": "Co to jest wiązanie kowalencyjne?",
+      "correct_answer": "Wiązanie przez współdzielenie elektronów",
+      "incorrect_answers": ["Wiązanie jonowe", "Wiązanie metaliczne", "Wiązanie wodorowe"],
+      "difficulty": "medium"
+    },
+    {
+      "question": "Jaka jest liczba atomowa węgla?",
+      "correct_answer": "6",
+      "incorrect_answers": ["12", "8", "4"],
+      "difficulty": "medium"
+    },
+    {
+      "question": "Co to jest elektroliza?",
+      "correct_answer": "Rozkład związku chemicznego pod wpływem prądu",
+      "incorrect_answers": ["Łączenie pierwiastków", "Reakcja spalania", "Reakcja zobojętniania"],
+      "difficulty": "medium"
+    }
+  ],
+  "hard": [
+    {
+      "question": "Co to jest hybrydyzacja orbitali atomowych?",
+      "correct_answer": "Mieszanie orbitali atomowych o różnej energii",
+      "incorrect_answers": ["Rozpad jądra atomowego", "Przemiana fazowa", "Reakcja utleniania"],
+      "difficulty": "hard"
+    },
+    {
+      "question": "Jakie jest prawo Hessa?",
+      "correct_answer": "Efekt cieplny reakcji nie zależy od drogi przemiany",
+      "incorrect_answers": ["Masa substratów równa się masie produktów", "Objętość gazu zależy od ciśnienia", "Energia nie może być zniszczona"],
+      "difficulty": "hard"
+    },
+    {
+      "question": "Co to jest chiralność?",
+      "correct_answer": "Cecha cząsteczki nieposiadającej płaszczyzny symetrii",
+      "incorrect_answers": ["Rodzaj wiązania chemicznego", "Typ reakcji chemicznej", "Właściwość pierwiastków"],
+      "difficulty": "hard"
+    },
+    {
+      "question": "Co to jest reguła oktetu?",
+      "correct_answer": "Dążenie atomów do uzyskania 8 elektronów walencyjnych",
+      "incorrect_answers": ["Zasada tworzenia izotopów", "Prawo przemian jądrowych", "Reguła tworzenia wiązań jonowych"],
+      "difficulty": "hard"
+    },
+    {
+      "question": "Co to jest efekt mezomeryczny?",
+      "correct_answer": "Delokalizacja elektronów w cząsteczce",
+      "incorrect_answers": ["Zmiana stanu skupienia", "Rozpad promieniotwórczy", "Reakcja redoks"],
+      "difficulty": "hard"
+    }
+  ]
+} 

@@ -1,0 +1,119 @@
+<div class="container-fluid min-vh-100 d-flex flex-column" style="background-color: #f9f9fb;">
+<header class="bg-primary text-white py-5 shadow-sm">
+  <div class="container text-center position-relative">
+    <button (click)="logout()" class="btn btn-outline-light position-absolute" style="right: 1rem; top: 1rem;">
+      <i class="fas fa-sign-out-alt me-2"></i>Wyloguj się
+    </button>
+    <h1 class="fw-bold" style="font-size: 2.5rem; font-family: 'Comic Neue', cursive;">
+      Witaj ponownie, <span class="text-warning">{{ firstName }}!</span>
+    </h1>
+    <p class="text-white-50" style="font-size: 1.2rem; font-family: 'Comic Neue', cursive;">
+      Czas na kolejne wyzwania i nowe osiągnięcia!
+    </p>
+  </div>
+</header>
+
+  <!--
+  W main komponent dodac panel nauczyciela, ktory bedzie umozliwial sprawdzanie pracy ucznia X
+  w porownaniu do ucznia Y ( - najwieksza ilosc zdobytych punktow)
+
+  Zestawienie dwoch uczniow odbywac sie bedzie na petli
+
+  Uczen Y bedzie wartoscia stala (1 uczen w tabeli, ktory ma najwieksza ilosc punktow)
+  Uczen X - zmienna od ucznia 2 do ucznia N
+
+  -->
+
+  <main class="flex-grow-1 py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="card shadow-sm border-0 h-100 text-center" style="border-radius: 15px; background: linear-gradient(to top, #ffffff, #f9f9fb);">
+            <div class="card-body d-flex flex-column">
+              <i class="fas fa-gamepad display-3 text-primary mb-3"></i>
+              <h5 class="card-title text-dark fw-bold">Zagraj</h5>
+              <p class="card-text text-muted">Rozpocznij grę i sprawdź swoje umiejętności!</p>
+              <a routerLink="/games/quiz" class="btn btn-primary fw-bold mt-auto py-2" style="border-radius: 10px;">Start</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="card shadow-sm border-0 h-100 text-center" style="border-radius: 15px; background: linear-gradient(to top, #ffffff, #f9f9fb);">
+            <div class="card-body d-flex flex-column">
+              <i class="fas fa-trophy display-3 text-warning mb-3"></i>
+              <h5 class="card-title text-dark fw-bold">Tabela Wyników</h5>
+              <p class="card-text text-muted">Sprawdź swoją pozycję w rankingu społeczności.</p>
+              <a routerLink="/games/leaderboard" class="btn btn-warning text-dark fw-bold mt-auto py-2" style="border-radius: 10px;">Ranking</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="card shadow-sm border-0 h-100 text-center" style="border-radius: 15px; background: linear-gradient(to top, #ffffff, #f9f9fb);">
+            <div class="card-body d-flex flex-column">
+              <i class="fas fa-user display-3 text-success mb-3"></i>
+              <h5 class="card-title text-dark fw-bold">Twój Profil</h5>
+              <p class="card-text text-muted">Zobacz swoje osiągnięcia i zarządzaj kontem.</p>
+              <a routerLink="/profile" class="btn btn-success fw-bold mt-auto py-2" style="border-radius: 10px;">Profil</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="card shadow-sm border-0 h-100 text-center" style="border-radius: 15px; background: linear-gradient(to top, #ffffff, #f9f9fb);">
+            <div class="card-body d-flex flex-column">
+              <i class="fas fa-envelope display-3 text-info mb-3"></i>
+              <h5 class="card-title text-dark fw-bold">Zaproszenia</h5>
+              <p class="card-text text-muted">Sprawdź zaproszenia do klas od nauczycieli.</p>
+              <a routerLink="/invites" class="btn btn-info text-white fw-bold mt-auto py-2 position-relative" style="border-radius: 10px;">
+                Zobacz
+                <span *ngIf="pendingInvites > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  {{ pendingInvites }}
+                  <span class="visually-hidden">nieprzeczytane zaproszenia</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="call-to-action mt-5 text-center py-5 px-3 bg-light rounded shadow-sm">
+        <h2 class="fw-bold">Podejmij wyzwanie już dziś!</h2>
+        <p class="text-muted">Każdy quiz to nowa okazja do nauki i zdobywania punktów!</p>
+        <a routerLink="/games/quiz" class="btn btn-primary btn-lg fw-bold px-5 py-3 mt-3" style="border-radius: 20px;">Rozpocznij Quiz</a>
+      </div>
+
+      <div class="community-stats text-center mt-5 p-5 bg-white rounded shadow-sm">
+        <h2 class="fw-bold mb-4">Twoje statystyki</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="stat-card p-4 rounded bg-light shadow-sm">
+              <i class="fas fa-check-circle display-3 text-success"></i>
+              <h3 class="fw-bold mt-2">32</h3>
+              <p>Quizów ukończonych</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="stat-card p-4 rounded bg-light shadow-sm">
+              <i class="fas fa-star display-3 text-warning"></i>
+              <h3 class="fw-bold mt-2">15</h3>
+              <p>Osiągnięć zdobytych</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="stat-card p-4 rounded bg-light shadow-sm">
+              <i class="fas fa-users display-3 text-primary"></i>
+              <h3 class="fw-bold mt-2">7</h3>
+              <p>Rywalizacji wygranych</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-primary text-white py-3 text-center">
+    <p class="mb-0">EduSpark — Twoja droga do sukcesu. © 2025</p>
+  </footer>
+</div>

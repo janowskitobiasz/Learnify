@@ -1,0 +1,98 @@
+{
+  "easy": [
+    {
+      "question": "Ile wynosi pierwiastek kwadratowy z 144?",
+      "correct_answer": "12",
+      "incorrect_answers": ["10", "14", "16"],
+      "difficulty": "easy"
+    },
+    {
+      "question": "Jakie jest pole kwadratu o boku 8 cm?",
+      "correct_answer": "64",
+      "incorrect_answers": ["56", "72", "80"],
+      "difficulty": "easy"
+    },
+    {
+      "question": "Ile wynosi 15% z 200?",
+      "correct_answer": "30",
+      "incorrect_answers": ["25", "35", "40"],
+      "difficulty": "easy"
+    },
+    {
+      "question": "Rozwiąż równanie: 2x + 5 = 13",
+      "correct_answer": "4",
+      "incorrect_answers": ["3", "5", "6"],
+      "difficulty": "easy"
+    },
+    {
+      "question": "Ile wynosi suma kątów w trójkącie?",
+      "correct_answer": "180",
+      "incorrect_answers": ["90", "270", "360"],
+      "difficulty": "easy"
+    }
+  ],
+  "medium": [
+    {
+      "question": "Jaka jest wartość liczby π (pi) zaokrąglona do dwóch miejsc po przecinku?",
+      "correct_answer": "3.14",
+      "incorrect_answers": ["3.12", "3.16", "3.18"],
+      "difficulty": "medium"
+    },
+    {
+      "question": "Ile wynosi pole koła o promieniu 5 cm? (użyj π ≈ 3.14)",
+      "correct_answer": "78.5",
+      "incorrect_answers": ["75.3", "81.7", "85.2"],
+      "difficulty": "medium"
+    },
+    {
+      "question": "Rozwiąż równanie: x² - 9 = 0",
+      "correct_answer": "3, -3",
+      "incorrect_answers": ["3", "-3", "9"],
+      "difficulty": "medium"
+    },
+    {
+      "question": "Jaka jest miara kąta wpisanego opartego na średnicy?",
+      "correct_answer": "90",
+      "incorrect_answers": ["45", "60", "180"],
+      "difficulty": "medium"
+    },
+    {
+      "question": "Ile wynosi cosinus 60 stopni?",
+      "correct_answer": "0.5",
+      "incorrect_answers": ["0", "1", "0.866"],
+      "difficulty": "medium"
+    }
+  ],
+  "hard": [
+    {
+      "question": "Oblicz pochodną funkcji f(x) = x² + 3x",
+      "correct_answer": "2x + 3",
+      "incorrect_answers": ["x² + 3", "2x", "x + 3"],
+      "difficulty": "hard"
+    },
+    {
+      "question": "Ile wynosi logarytm dziesiętny z 1000?",
+      "correct_answer": "3",
+      "incorrect_answers": ["2", "4", "10"],
+      "difficulty": "hard"
+    },
+    {
+      "question": "Jaka jest wartość wyrażenia sin²α + cos²α?",
+      "correct_answer": "1",
+      "incorrect_answers": ["0", "2", "zależy od α"],
+      "difficulty": "hard"
+    },
+    {
+      "question": "Rozwiąż nierówność: x² - 4 > 0",
+      "correct_answer": "x < -2 lub x > 2",
+      "incorrect_answers": ["-2 < x < 2", "x > 2", "x < -2"],
+      "difficulty": "hard"
+    },
+    {
+      "question": "Ile wynosi granica ciągu (1 + 1/n)ⁿ gdy n dąży do nieskończoności?",
+      "correct_answer": "e",
+      "incorrect_answers": ["1", "∞", "0"],
+      "difficulty": "hard"
+    }
+  ]
+} 

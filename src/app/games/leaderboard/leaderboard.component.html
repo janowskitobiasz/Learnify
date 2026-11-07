@@ -1,0 +1,132 @@
+<div class="container-fluid min-vh-100 d-flex flex-column" style="background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);">
+  <header class="py-4" style="background: linear-gradient(135deg, #4338CA 0%, #6366F1 100%);">
+    <div class="container text-center position-relative">
+      <button routerLink="/main" class="btn btn-light position-absolute" style="left: 1rem; top: 1rem;">
+        <i class="fas fa-arrow-left me-2"></i>Powrót
+      </button>
+      <h1 class="text-white fw-bold mb-2">Tablica Wyników</h1>
+      <p class="text-white-50 mb-0">Zobacz najlepsze wyniki i porównaj swoje osiągnięcia!</p>
+    </div>
+  </header>
+
+  <main class="flex-grow-1 py-4">
+    <div class="container" style="max-width: 1200px;">
+      <!-- Error Message -->
+      <div *ngIf="error" class="alert alert-danger alert-dismissible fade show mb-4 border-0" 
+           style="background: linear-gradient(135deg, #FEE2E2 0%, #FEF2F2 100%); color: #991B1B; border-radius: 0.5rem;">
+        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+        {{ error }}
+        <button type="button" class="btn-close" (click)="error = null"></button>
+      </div>
+
+      <!-- Subject Filter -->
+      <div class="card shadow-sm border-0 p-4 mb-4" style="border-radius: 0.75rem;">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <label class="form-label small fw-medium text-secondary">Filtruj według przedmiotu:</label>
+            <select class="form-select shadow-sm" [(ngModel)]="selectedSubject" (ngModelChange)="onSubjectChange()"
+                    style="border-radius: 0.5rem; border-color: #E0E7FF;">
+              <option [ngValue]="null">Wszystkie przedmioty</option>
+              <option *ngFor="let subject of subjects" [value]="subject">
+                {{ subject }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- User's Personal Scores -->
+      <div class="card shadow-sm border-0 p-4 mb-4" style="border-radius: 0.75rem;">
+        <h3 class="h5 mb-4" style="color: #1E293B;">Twoje Wyniki</h3>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead class="table-light">
+              <tr>
+                <th>Przedmiot</th>
+                <th>Wynik</th>
+                <th>Poziom</th>
+                <th>Data</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngIf="userScores.length === 0">
+                <td colspan="4" class="text-center text-muted py-4">
+                  Nie masz jeszcze żadnych wyników. Zagraj w quiz!
+                </td>
+              </tr>
+              <tr *ngFor="let score of userScores">
+                <td>{{ score.subject }}</td>
+                <td>
+                  {{ score.score }}/{{ score.total_questions }}
+                  <small class="text-muted">({{ getScorePercentage(score) | number:'1.0-0' }}%)</small>
+                </td>
+                <td>
+                  <span [class]="getDifficultyClass(score.difficulty)">
+                    {{ getDifficultyLabel(score.difficulty) }}
+                  </span>
+                </td>
+                <td>{{ score.created_at | date:'dd.MM.yyyy HH:mm' }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Global Leaderboard -->
+      <div class="card shadow-sm border-0 p-4" style="border-radius: 0.75rem;">
+        <h3 class="h5 mb-4" style="color: #1E293B;">Ranking Globalny</h3>
+        
+        <!-- Loading Spinner -->
+        <div *ngIf="isLoading" class="text-center py-4">
+          <div class="spinner-border" style="color: #4338CA;" role="status">
+            <span class="visually-hidden">Ładowanie...</span>
+          </div>
+          <p class="mt-3 text-secondary">Ładowanie wyników...</p>
+        </div>
+
+        <!-- Leaderboard Table -->
+        <div *ngIf="!isLoading" class="table-responsive">
+          <table class="table table-hover">
+            <thead class="table-light">
+              <tr>
+                <th>#</th>
+                <th>Gracz</th>
+                <th>Przedmiot</th>
+                <th>Wynik</th>
+                <th>Poziom</th>
+                <th>Data</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngIf="leaderboardEntries.length === 0">
+                <td colspan="6" class="text-center text-muted py-4">
+                  Brak wyników do wyświetlenia
+                </td>
+              </tr>
+              <tr *ngFor="let entry of leaderboardEntries; let i = index">
+                <td>
+                  <span class="badge" 
+                        [style.background]="i < 3 ? 'linear-gradient(135deg, #4338CA 0%, #6366F1 100%)' : '#94A3B8'">
+                    {{ i + 1 }}
+                  </span>
+                </td>
+                <td>{{ entry.user_first_name }} {{ entry.user_last_name }}</td>
+                <td>{{ entry.subject }}</td>
+                <td>
+                  {{ entry.score }}/{{ entry.total_questions }}
+                  <small class="text-muted">({{ getScorePercentage(entry) | number:'1.0-0' }}%)</small>
+                </td>
+                <td>
+                  <span [class]="getDifficultyClass(entry.difficulty)">
+                    {{ getDifficultyLabel(entry.difficulty) }}
+                  </span>
+                </td>
+                <td>{{ entry.created_at | date:'dd.MM.yyyy HH:mm' }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

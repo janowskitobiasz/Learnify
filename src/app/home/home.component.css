@@ -1,0 +1,74 @@
+.stat-card {
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .stat-card:hover {
+    transform: scale(1.1);
+    background-color: #f8f9fa;
+  }
+  .accordion-button {
+    background-color: #f8f9fa;
+    color: #212529;
+    font-weight: bold;
+  }
+  
+  .accordion-button:focus {
+    box-shadow: none;
+  }
+  
+  .accordion-item {
+    border: none;
+    margin-bottom: 1rem;
+  }
+  
+  .accordion-body {
+    background-color: #ffffff;
+  }
+  .hero-section {
+    background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+    border-radius: 12px;
+  }
+  
+  .hero-section a.btn-outline-primary {
+    background-color: transparent;
+    border: 2px solid #007bff;
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .hero-section a.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+  }
+
+.typewriter-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    
+    font-size: 1.5rem;
+    animation: typing 3.5s steps(60, end), blink 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0; 
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  
+  .additional-description {
+    text-align: left;
+    margin-top: 20px;
+    color: #555;
+  }
+  .highlighted-text p {
+    font-size: 1.05rem; 
+    line-height: 1.8; 
+    margin-bottom: 1rem; 
+  }
+  
+  
