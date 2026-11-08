@@ -12,21 +12,21 @@ Do przechowywania danych jest wykorzystywana baza danych supabase
 
 Dane logowania dla nauczyciela:
 
-nowak@test.com
-zaq1@wsx
+login: nowak@test.com
+hasło: zaq1@wsx
 
 2. Logowanie dla ucznia jest ogólno dostępne
 
 Dane do logowania dla ucznia:
 
-karolak@test.com
-zaq1@wsx
+login: karolak@test.com
+hasło: zaq1@wsx
 
 #Ogólne działanie strony
 
 Strona poświęcona jest dla uczniów szkół podstawowych, głównym motywem jest przygotowanie mini gier, które mają umilić uczniom sposób nauki oraz połączyć z tym rywalizacje. Nauczyciel może wykorzystywać stronę jako praca domowa lub aktywność na lekcji oraz możliwość wystawienia oceny. W przyszłości jest planowane wprowadzenie motywu gier, które są trendem wśród grupy wiekowej uczniów szkół podstawowych, lecz pomysł ten jest na ten moment odsunięty od realizacj. 
 
-#Uczeń - panel
+# Uczeń - panel
 
 W panelu ucznia znajduje możliwość rozegrania gry, tabela wyników (ogólnodostępna dla każdego użytkownika oraz w przyszłości podział na filtry ze swojej klasy), zarządzenie profilem, oraz zaproszenia. Zaproszenia są od nauczycieli, którzy stworzyli swoją klasę we własnym panelu.
 
@@ -34,7 +34,7 @@ Rozgrywanie gier polega na wyborze przedmiotów oraz poziomu trudności. Każdy 
 
 Dane w statystykach są fikcyjne i służą tylko i wyłącznie jako zobrazowanie realnych danych w przyszłości. 
 
-#Nauczyciel - panel
+# Nauczyciel - panel
 
 Nauczyciel wybiera przedmiot, do którego chce przypisać klasę. Np. Chemia - 5c. Poprzez wpisanie adresu email ucznia możliwym jest wysłanie zaproszenia do klasy. W panelu klasy, nauczyciel może zobaczyć wyniki klasy. Tylko i wyłącznie filtrowane na podstawie jego obecnego zespołu.
 
