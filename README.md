@@ -1,6 +1,7 @@
 # EduSpark
 
-Strona działa pod adresem eduspark1111.netlify.app
+Strona działa pod adresem 
+[eduspark1111.netlify.app](https://eduspark1111.netlify.app/)
 Do przechowywania danych jest wykorzystywana baza danych supabase
 
 # WAŻNE! Strona jest w trakcie budowy, jest to  wersja, która może nie działać poprawnie i służy jako obraz projektu, który pojawi się w finalnej formie w pełni sprawny. Stronę tworzę sam. Jestem studentem II roku informatyki, w wolnym czasie rozwijam obecny projekt, który mam nadzieję, że odniesie sukces i przyniesie pomoc oraz otworzy radość z nauki dla uczniów szkół podstawowych.
