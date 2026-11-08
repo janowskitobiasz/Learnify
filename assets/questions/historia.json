@@ -1,0 +1,98 @@
+{
+  "easy": [
+    {
+      "question": "W którym roku rozpoczęła się II wojna światowa?",
+      "correct_answer": "1939",
+      "incorrect_answers": ["1938", "1940", "1941"],
+      "difficulty": "easy"
+    },
+    {
+      "question": "Kto był pierwszym królem Polski?",
+      "correct_answer": "Bolesław Chrobry",
+      "incorrect_answers": ["Mieszko I", "Kazimierz Wielki", "Władysław Jagiełło"],
+      "difficulty": "easy"
+    },
+    {
+      "question": "Kiedy odbyła się bitwa pod Grunwaldem?",
+      "correct_answer": "1410",
+      "incorrect_answers": ["1400", "1420", "1430"],
+      "difficulty": "easy"
+    },
+    {
+      "question": "Kto był ostatnim królem Polski?",
+      "correct_answer": "Stanisław August Poniatowski",
+      "incorrect_answers": ["Jan III Sobieski", "August III Sas", "Zygmunt III Waza"],
+      "difficulty": "easy"
+    },
+    {
+      "question": "W którym roku Polska odzyskała niepodległość?",
+      "correct_answer": "1918",
+      "incorrect_answers": ["1914", "1920", "1921"],
+      "difficulty": "easy"
+    }
+  ],
+  "medium": [
+    {
+      "question": "Co to była konstytucja 3 maja?",
+      "correct_answer": "Pierwsza w Europie ustawa zasadnicza",
+      "incorrect_answers": ["Traktat pokojowy", "Umowa handlowa", "Dokument wojskowy"],
+      "difficulty": "medium"
+    },
+    {
+      "question": "Kto dowodził w bitwie pod Wiedniem?",
+      "correct_answer": "Jan III Sobieski",
+      "incorrect_answers": ["Tadeusz Kościuszko", "Stefan Czarniecki", "Józef Piłsudski"],
+      "difficulty": "medium"
+    },
+    {
+      "question": "Co to był Hołd Pruski?",
+      "correct_answer": "Złożenie hołdu lennego przez księcia Albrechta Hohenzollerna",
+      "incorrect_answers": ["Bitwa z Krzyżakami", "Traktat pokojowy", "Zjazd monarchów"],
+      "difficulty": "medium"
+    },
+    {
+      "question": "Kiedy miał miejsce potop szwedzki?",
+      "correct_answer": "1655-1660",
+      "incorrect_answers": ["1600-1605", "1620-1625", "1670-1675"],
+      "difficulty": "medium"
+    },
+    {
+      "question": "Co to były rozbiory Polski?",
+      "correct_answer": "Podział terytorium Polski między Rosję, Prusy i Austrię",
+      "incorrect_answers": ["Wojna domowa", "Reforma administracyjna", "Powstanie narodowe"],
+      "difficulty": "medium"
+    }
+  ],
+  "hard": [
+    {
+      "question": "Co to była unia w Krewie?",
+      "correct_answer": "Porozumienie polsko-litewskie z 1385 roku",
+      "incorrect_answers": ["Traktat z Krzyżakami", "Sojusz z Węgrami", "Umowa z Rusią"],
+      "difficulty": "hard"
+    },
+    {
+      "question": "Kto był twórcą Legionów Polskich we Włoszech?",
+      "correct_answer": "Jan Henryk Dąbrowski",
+      "incorrect_answers": ["Tadeusz Kościuszko", "Józef Poniatowski", "Kazimierz Pułaski"],
+      "difficulty": "hard"
+    },
+    {
+      "question": "Co to była konfederacja targowicka?",
+      "correct_answer": "Spisek magnatów przeciw Konstytucji 3 maja",
+      "incorrect_answers": ["Sojusz wojskowy", "Reforma podatkowa", "Powstanie chłopskie"],
+      "difficulty": "hard"
+    },
+    {
+      "question": "Co to był sejm niemy?",
+      "correct_answer": "Sejm z 1717 roku pod naciskiem Rosji",
+      "incorrect_answers": ["Pierwszy sejm Rzeczypospolitej", "Ostatni sejm I RP", "Sejm rozbiorowy"],
+      "difficulty": "hard"
+    },
+    {
+      "question": "Co to była Rzeczpospolita Obojga Narodów?",
+      "correct_answer": "Państwo polsko-litewskie po unii lubelskiej",
+      "incorrect_answers": ["Sojusz polsko-węgierski", "Unia polsko-czeska", "Federacja słowiańska"],
+      "difficulty": "hard"
+    }
+  ]
+} 
