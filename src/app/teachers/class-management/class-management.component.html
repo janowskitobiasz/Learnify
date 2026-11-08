@@ -15,13 +15,13 @@
 
   <main class="flex-grow-1 py-5">
     <div class="container">
-      <!-- Error Alert -->
+
       <div *ngIf="error" class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
         {{ error }}
         <button type="button" class="btn-close" (click)="error = null" aria-label="Close"></button>
       </div>
 
-      <!-- Create New Class -->
+      
       <div class="card shadow-sm border-0 mb-4" style="border-radius: 15px;">
         <div class="card-body">
           <h3 class="card-title mb-4">Utwórz Nową Klasę</h3>
@@ -54,7 +54,7 @@
         </div>
       </div>
 
-      <!-- Class List -->
+     
       <div class="row">
         <div class="col-md-4">
           <div class="card shadow-sm border-0" style="border-radius: 15px;">
@@ -76,13 +76,13 @@
           </div>
         </div>
 
-        <!-- Class Details -->
+        
         <div class="col-md-8" *ngIf="selectedClass">
           <div class="card shadow-sm border-0" style="border-radius: 15px;">
             <div class="card-body">
               <h3 class="card-title mb-4">{{ selectedClass.class_name }} - {{ selectedClass.subject }}</h3>
 
-              <!-- Invite Students -->
+              
               <div class="mb-4">
                 <h4>Zaproś Uczniów</h4>
                 <form (ngSubmit)="inviteStudent()" #inviteForm="ngForm" class="row g-3">
@@ -98,7 +98,7 @@
                 </form>
               </div>
 
-              <!-- Student List -->
+           
               <div class="mt-4">
                 <h4>Lista uczniów</h4>
                 <div class="table-responsive">
@@ -174,12 +174,12 @@
                 </div>
               </div>
 
-              <!-- View Scores Button -->
+            
               <button class="btn btn-outline-primary mt-4" (click)="viewClassScores(selectedClass!)">
                 <i class="fas fa-chart-bar me-2"></i>Zobacz Wyniki Klasy
               </button>
 
-              <!-- Scores Display -->
+          
               <div *ngIf="showScores" class="mt-4">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                   <h4>Wyniki Uczniów</h4>
