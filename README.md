@@ -1,28 +1,39 @@
 # EduSpark
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+Strona działa pod adresem eduspark1111.netlify.app
+Do przechowywania danych jest wykorzystywana baza danych supabase
 
-## Development server
+# WAŻNE! Strona jest w trakcie budowy, jest to  wersja, która może nie działać poprawnie i służy jako obraz projektu, który pojawi się w finalnej formie w pełni sprawny. Stronę tworzę sam. Jestem studentem II roku informatyki, w wolnym czasie rozwijam obecny projekt, który mam nadzieję, że odniesie sukces i przyniesie pomoc oraz otworzy radość z nauki dla uczniów szkół podstawowych.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Logowanie
 
-## Code scaffolding
+1. Aby zalogować się jako nauczyciel należy trzykrotnie kliknąć w napis "EduSpark" w panelu logowania. (Jest to tymczasowe zabezpieczenie w celu ukrycia logowania dla nauczyciela)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Dane logowania dla nauczyciela:
 
-## Build
+nowak@test.com
+zaq1@wsx
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Logowanie dla ucznia jest ogólno dostępne
 
-## Running unit tests
+Dane do logowania dla ucznia:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+karolak@test.com
+zaq1@wsx
 
-## Running end-to-end tests
+#Ogólne działanie strony
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Strona poświęcona jest dla uczniów szkół podstawowych, głównym motywem jest przygotowanie mini gier, które mają umilić uczniom sposób nauki oraz połączyć z tym rywalizacje. Nauczyciel może wykorzystywać stronę jako praca domowa lub aktywność na lekcji oraz możliwość wystawienia oceny. W przyszłości jest planowane wprowadzenie motywu gier, które są trendem wśród grupy wiekowej uczniów szkół podstawowych, lecz pomysł ten jest na ten moment odsunięty od realizacj. 
 
-## Further help
+#Uczeń - panel
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# Learnify
+W panelu ucznia znajduje możliwość rozegrania gry, tabela wyników (ogólnodostępna dla każdego użytkownika oraz w przyszłości podział na filtry ze swojej klasy), zarządzenie profilem, oraz zaproszenia. Zaproszenia są od nauczycieli, którzy stworzyli swoją klasę we własnym panelu.
+
+Rozgrywanie gier polega na wyborze przedmiotów oraz poziomu trudności. Każdy poziom trudności ma inną pulę pytań oraz inną pulę punktów do zdobycia. W chwili obecnej tryb gry to quiz jednokrotnego wyboru, lecz w przyszłości planowane jest dodanie większej ilości gier dla uczniów.
+
+Dane w statystykach są fikcyjne i służą tylko i wyłącznie jako zobrazowanie realnych danych w przyszłości. 
+
+#Nauczyciel - panel
+
+Nauczyciel wybiera przedmiot, do którego chce przypisać klasę. Np. Chemia - 5c. Poprzez wpisanie adresu email ucznia możliwym jest wysłanie zaproszenia do klasy. W panelu klasy, nauczyciel może zobaczyć wyniki klasy. Tylko i wyłącznie filtrowane na podstawie jego obecnego zespołu.
+
