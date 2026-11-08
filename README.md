@@ -1,40 +1,64 @@
 # EduSpark
 
-Strona działa pod adresem 
-[eduspark1111.netlify.app](https://eduspark1111.netlify.app/)
-Do przechowywania danych jest wykorzystywana baza danych supabase
+## O projekcie
+EduSpark to platforma edukacyjna skierowana do uczniów szkół podstawowych, łącząca naukę z elementami grywalizacji i zdrowej rywalizacji. Aplikacja umożliwia uczniom utrwalanie wiedzy poprzez interaktywne quizy, a nauczycielom – zarządzanie klasami, zadawanie materiałów oraz monitorowanie postępów uczniów.
 
-# WAŻNE! Strona jest w trakcie budowy, jest to  wersja, która może nie działać poprawnie i służy jako obraz projektu, który pojawi się w finalnej formie w pełni sprawny. Stronę tworzę sam. Jestem studentem II roku informatyki, w wolnym czasie rozwijam obecny projekt, który mam nadzieję, że odniesie sukces i przyniesie pomoc oraz otworzy radość z nauki dla uczniów szkół podstawowych.
+Projekt tworzony jest samodzielnie.
 
-# Logowanie
+- **Status projektu:** Wersja demonstracyjna w fazie aktywnego rozwoju (Proof of Concept / Wersja Poglądowa).
+- **Live Demo:** [eduspark1111.netlify.app](https://eduspark1111.netlify.app)
+- **Baza danych:** Supabase
+- **Ważne:** Projekt nie jest finalnie skończony, jest to wersja demonstracyjna tylko i wyłącznie skierowana do podstawowych testów działania logiki działania aplikacji, która dopiero jest rozwijana.
+---
 
-1. Aby zalogować się jako nauczyciel należy trzykrotnie kliknąć w napis "EduSpark" w panelu logowania. (Jest to tymczasowe zabezpieczenie w celu ukrycia logowania dla nauczyciela)
+## Architektura i Technologie
+* **Frontend:** Angular
+* **Baza Danych:** Supabase (zarządzanie bazą danych, uwierzytelnianie)
+* **Hosting:** Netlify
 
-Dane logowania dla nauczyciela:
+---
 
-login: nowak@test.com
-hasło: zaq1@wsx
+## Funkcjonalności
 
-2. Logowanie dla ucznia jest ogólno dostępne
+### Panel Ucznia
+* **Grywalizacja i Quizy:** Wybór przedmiotów oraz poziomu trudności, zróżnicowane pule pytań i system punktacji. Obecnie wspierany jest tryb quizu jednokrotnego wyboru (w planach rozwój o dodatkowe mechaniki gier).
+* **Tablica Wyników (Leaderboard):** Ogólnodostępny ranking wyników (w planach filtrowanie w obrębie konkretnych klas).
+* **Zarządzanie profilem i zaproszeniami:** Odbieranie zaproszeń do klas tworzonych przez nauczycieli oraz zarządzanie kontem.
+* *Uwaga:* Prezentowane w statystykach dane mają charakter demonstracyjny.
 
-Dane do logowania dla ucznia:
+### Panel Nauczyciela
+* **Zarządzanie klasami i przedmiotami:** Tworzenie i przypisywanie klas do konkretnych przedmiotów (np. Chemia - klasa 5c).
+* **System zaproszeń:** Rejestrowanie i zapraszanie uczniów do klas za pomocą adresu e-mail.
+* **Monitorowanie wyników:** Podgląd i filtrowanie wyników uczniów należących do danej klasy.
 
-login: karolak@test.com
-hasło: zaq1@wsx
+---
 
-#Ogólne działanie strony
+## Instrukcja testowania aplikacji
 
-Strona poświęcona jest dla uczniów szkół podstawowych, głównym motywem jest przygotowanie mini gier, które mają umilić uczniom sposób nauki oraz połączyć z tym rywalizacje. Nauczyciel może wykorzystywać stronę jako praca domowa lub aktywność na lekcji oraz możliwość wystawienia oceny. W przyszłości jest planowane wprowadzenie motywu gier, które są trendem wśród grupy wiekowej uczniów szkół podstawowych, lecz pomysł ten jest na ten moment odsunięty od realizacj. 
+Aby ułatwić ocenę funkcjonalności systemu, udostępniono dedykowane konta testowe dla obu ról użytkowników.
 
-# Uczeń - panel
+### 1. Konto Ucznia
+Logowanie dla uczniów jest w pełni publiczne i dostępne bezpośrednio z poziomu panelu logowania.
 
-W panelu ucznia znajduje możliwość rozegrania gry, tabela wyników (ogólnodostępna dla każdego użytkownika oraz w przyszłości podział na filtry ze swojej klasy), zarządzenie profilem, oraz zaproszenia. Zaproszenia są od nauczycieli, którzy stworzyli swoją klasę we własnym panelu.
+* **Login:** `karolak@test.com`
+* **Hasło:** `zaq1@wsx`
 
-Rozgrywanie gier polega na wyborze przedmiotów oraz poziomu trudności. Każdy poziom trudności ma inną pulę pytań oraz inną pulę punktów do zdobycia. W chwili obecnej tryb gry to quiz jednokrotnego wyboru, lecz w przyszłości planowane jest dodanie większej ilości gier dla uczniów.
+### 2. Konto Nauczyciela
+Panel nauczyciela jest ukryty pod zabezpieczeniem systemowym w celach demonstracyjnych. 
 
-Dane w statystykach są fikcyjne i służą tylko i wyłącznie jako zobrazowanie realnych danych w przyszłości. 
+* **Instrukcja logowania:** 
+  1. Przejdź do widoku logowania.
+  2. Kliknij trzykrotnie w nagłówek/napis **"EduSpark"**, aby odblokować formularz logowania dla nauczyciela.
+* **Dane dostępowe:**
+  * **Login:** `nowak@test.com`
+  * **Hasło:** `zaq1@wsx`
 
-# Nauczyciel - panel
+---
 
-Nauczyciel wybiera przedmiot, do którego chce przypisać klasę. Np. Chemia - 5c. Poprzez wpisanie adresu email ucznia możliwym jest wysłanie zaproszenia do klasy. W panelu klasy, nauczyciel może zobaczyć wyniki klasy. Tylko i wyłącznie filtrowane na podstawie jego obecnego zespołu.
+## Planowany rozwój (Roadmap)
+* Wprowadzenie zaawansowanych filtrów rankingowych dla klas.
+* Rozbudowa modułu gier o dodatkowe mechaniki edukacyjne inspirowane trendami wśród uczniów szkół podstawowych.
+* Poszerzenie bazy pytań i przedmiotów szkolnych.
+
+---
 
